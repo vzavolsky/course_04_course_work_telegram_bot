@@ -60,7 +60,7 @@ public class TelegramBotService {
             case "/info":
                 return message.info();
             default:
-                return String.format("Hi again, %s.", userName);
+                return message.unknow();
         }
     }
 

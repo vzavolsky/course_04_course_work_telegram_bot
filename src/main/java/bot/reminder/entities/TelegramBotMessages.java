@@ -34,4 +34,7 @@ public class TelegramBotMessages {
         return "The note wasn't found.";
     }
 
+    public String unknow() {
+        return "Hey, dude. That command wasn't reserved. Check /help command. :)";
+    }
 }
