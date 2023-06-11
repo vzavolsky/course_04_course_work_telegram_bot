@@ -29,12 +29,11 @@ public class TelegramBotService {
 
     private Pattern pattern = Pattern.compile("^(\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}) (.{0,255})");
     private Pattern delPattern = Pattern.compile("^(/delete) (\\d{0,30})");
-    Matcher matcher;
+    private Matcher matcher;
 
     //private Pattern pattern = Pattern.compile("([0-9\\.\\:\\s]{16})(\\s)([\\W+]+)");
 
     public String returnMessage(Update update) {
-
 
         Long chatId = update.message().chat().id();
         String text = update.message().text();
