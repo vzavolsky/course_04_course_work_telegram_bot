@@ -2,6 +2,8 @@ package bot.reminder.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 @Entity
 @Table(name = "notification_task")
@@ -58,11 +60,9 @@ public class TelegramBotNotification {
 
     @Override
     public String toString() {
-        return "TelegramBotNotification{" +
-                "id=" + id +
-                ", date=" + date +
-                ", text='" + text + '\'' +
-                ", chatId=" + chatId +
-                '}';
+        return String.format("%d - %s %s",
+                id,
+                date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),
+                text);
     }
 }
