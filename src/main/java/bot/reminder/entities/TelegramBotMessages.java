@@ -37,4 +37,8 @@ public class TelegramBotMessages {
     public String unknow() {
         return "Hey, dude. That command wasn't reserved. Check the /help command out. :)";
     }
+
+    public String add(String text) {
+        return String.format("Remind task was added: %s", text);
+    }
 }

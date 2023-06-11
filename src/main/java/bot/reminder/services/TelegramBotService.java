@@ -42,7 +42,7 @@ public class TelegramBotService {
         matcher = pattern.matcher(text);
         if (matcher.matches()) {
             add(update);
-            return "Something was added.";
+            return message.add(text);
         }
 
         matcher = delPattern.matcher(text);
