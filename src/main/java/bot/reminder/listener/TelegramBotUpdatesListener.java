@@ -58,7 +58,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     public void run() {
         Collection<TelegramBotNotification> currentNotes = telegramBotService.getCurrentNotes();
         if (currentNotes.size() > 0) {
-            currentNotes.stream().
+            currentNotes.
                     forEach(telegramBotNotification -> {
                         SendMessage message = new SendMessage(telegramBotNotification.getChatId(), telegramBotNotification.getText());
                         SendResponse response = telegramBot.execute(message);
