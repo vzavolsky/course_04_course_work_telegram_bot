@@ -35,6 +35,6 @@ public class TelegramBotMessages {
     }
 
     public String unknow() {
-        return "Hey, dude. That command wasn't reserved. Check /help command. :)";
+        return "Hey, dude. That command wasn't reserved. Check the /help command out. :)";
     }
 }
