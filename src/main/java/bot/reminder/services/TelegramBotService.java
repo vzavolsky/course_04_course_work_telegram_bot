@@ -4,15 +4,12 @@ import bot.reminder.entities.TelegramBotMessages;
 import bot.reminder.entities.TelegramBotNotification;
 import bot.reminder.repositories.TelegramBotNotificationRepository;
 import com.pengrad.telegrambot.model.Update;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
-import java.util.Date;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -21,14 +18,14 @@ import java.util.stream.Collectors;
 public class TelegramBotService {
 
     private final TelegramBotNotificationRepository telegramBotNotificationRepository;
-    private TelegramBotMessages message = new TelegramBotMessages();
+    private final TelegramBotMessages message = new TelegramBotMessages();
 
     public TelegramBotService(TelegramBotNotificationRepository telegramBotNotificationRepository) {
         this.telegramBotNotificationRepository = telegramBotNotificationRepository;
     }
 
-    private Pattern pattern = Pattern.compile("^(\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}) (.{0,255})");
-    private Pattern delPattern = Pattern.compile("^(/delete) (\\d{0,30})");
+    private final Pattern pattern = Pattern.compile("^(\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}) (.{0,255})");
+    private final Pattern delPattern = Pattern.compile("^(/delete) (\\d{0,30})");
     private Matcher matcher;
 
     //private Pattern pattern = Pattern.compile("([0-9\\.\\:\\s]{16})(\\s)([\\W+]+)");
